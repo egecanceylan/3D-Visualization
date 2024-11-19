@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-container {
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  overflow: hidden; /* Prevents scrolling if elements overflow the container */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.table-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Pushes the title to the left and the button to the right */
   align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title on the upper left */
+.table-title {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 100%; /* Ensure the table doesn't exceed the screen width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Make table scrollable horizontally if necessary */
+}
+
+.custom-table {
+  width: 100%;
+  min-width: 600px; /* Set a minimum width to prevent shrinking too much on small screens */
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.custom-table th {
+  padding: 15px;
+  text-align: left;
+  white-space: nowrap; /* Prevent long text from breaking to new lines */
+}
+
+.custom-table td {
+  padding: 15px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd; /* Adds a horizontal line between rows */
+}
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none; /* Remove the border for the last row */
+}
+
+.custom-table a:hover {
+  text-decoration: underline;
+}
+
+/* Hover effects for rows */
+.custom-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.upload-button-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.upload-button {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: #357C87;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-button:hover {
+  background-color: #2a626a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.upload-button .material-icons {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .custom-table td:first-child {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .upload-button-container {
+    margin-top: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header-right {
+    margin-top: 10px;
   }
 }
+
+
+
